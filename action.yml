@@ -9,6 +9,7 @@ runs:
         python-version: 3.10.8
       
     - name: Install libclang
+      shell: bash
       run: sudo apt update && sudo apt-get install clang libclang-dev -y
       
     - name: Rust setup
@@ -19,6 +20,7 @@ runs:
         default: true
     
     - name: Install `rust-src`
+      shell: bash
       run: rustup component add rust-src --toolchain ${{ env.rust_toolchain }}-x86_64-unknown-linux-gnu
     
     - name: Install `ldproxy`
